@@ -1,0 +1,85 @@
+name: 🐛 Hata Raporu
+description: Bir hata veya beklenmeyen davranış bildirin.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 👋 Hata Bildirimi
+        Bir hata bulduğunuz için teşekkürler! Lütfen aşağıdaki formu doldurarak sorunu anlamamıza yardımcı olun.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 🐛 Hata Açıklaması
+      description: Hatanın ne olduğunu net ve özlü bir şekilde açıklayın.
+      placeholder: "Şuraya tıkladığımda bu oldu..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 📋 Tekrarlama Adımları
+      description: Hatayı tekrarlamak için adımları listeleyin.
+      placeholder: |
+        1. '...' sayfasına gidin
+        2. '...' butonuna tıklayın
+        3. Hatayı görün
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: ✅ Beklenen Davranış
+      description: Ne olmasını bekliyordunuz?
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 📸 Ekran Görüntüleri
+      description: Varsa, sorunu gösteren ekran görüntülerini buraya sürükleyip bırakın.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: 🖥️ İşletim Sistemi
+      description: Hangi işletim sistemini kullanıyorsunuz?
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - Diğer
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: 🌐 Tarayıcı
+      description: Hangi tarayıcıyı kullanıyorsunuz? (örn: Chrome 120, Firefox 119)
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: 📝 Ek Bilgiler
+      description: Sorun hakkında eklemek istediğiniz başka bağlam var mı?
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ Kontrol Listesi
+      options:
+        - label: Benzer bir issue açılmamış olduğunu kontrol ettim
+          required: true
+        - label: Bu hatayı en son sürümde denedim
+          required: true
+        - label: Tüm gerekli bilgileri sağladım
+          required: true
